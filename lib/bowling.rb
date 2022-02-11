@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
 class Bowling
-  def initialize(rolls = ''); end
+  STRIKE = 'X'
+
+  def initialize(rolls: '')
+    @rolls = rolls
+  end
 
   def total_score
-    10
+    return 10 if @rolls == STRIKE
+
+    @rolls.to_i.digits.sum
   end
 end
