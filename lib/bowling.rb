@@ -2,6 +2,7 @@
 
 class Bowling
   STRIKE = 'X'
+  SPARE = '/'
 
   def initialize(rolls: '')
     @rolls = rolls
@@ -10,7 +11,7 @@ class Bowling
   def total_score
     frames = @rolls.split(' ')
 
-    if frames.length == 2 && (!@rolls.include?(STRIKE) || !@rolls.include?('/'))
+    if frames.length == 2 && (!@rolls.include?(STRIKE) || !@rolls.include?(SPARE))
       score = 0
 
       frames.each do |frame|
