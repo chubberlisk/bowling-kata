@@ -29,5 +29,11 @@ describe Bowling do
 
       expect(bowling.total_score).to eq(16)
     end
+
+    it 'adds 10 to score for previous strike' do
+      bowling = Bowling.new(rolls: 'X 34')
+
+      expect(bowling.total_score).to eq(24)
+    end
   end
 end
