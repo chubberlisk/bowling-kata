@@ -11,18 +11,14 @@ class Bowling
   def total_score
     frames = @rolls.split(' ')
 
-    if frames.length == 2 && (!@rolls.include?(STRIKE) || !@rolls.include?(SPARE))
-      score = 0
+    first_frame = frames[0]
 
-      frames.each do |frame|
-        score += frame.to_i.digits.sum
-      end
-
-      return score
+    if first_frame.include?(STRIKE)
+      10
+    elsif first_frame.include?(SPARE)
+      10
+    else
+      frames.map(&:to_i).map(&:digits).reduce(0) { |score, frame| score + frame.sum }
     end
-
-    return 10 if @rolls == STRIKE || @rolls.include?('/')
-
-    @rolls.to_i.digits.sum
   end
 end
