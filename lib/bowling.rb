@@ -1,7 +1,5 @@
 class Bowling
-  def initialize(rolls="")
-
-  end
+  def initialize(rolls = ''); end
 
   def total_score
     10
