@@ -20,6 +20,8 @@ class Bowling
       10
     elsif first_frame.include?(STRIKE)
       10 + second_frame.to_i.digits.sum + second_frame.to_i.digits.sum
+    elsif first_frame.include?(SPARE)
+      10 + second_frame[0].to_i + second_frame.to_i.digits.sum
     else
       frames.map(&:to_i).map(&:digits).reduce(0) { |score, frame| score + frame.sum }
     end

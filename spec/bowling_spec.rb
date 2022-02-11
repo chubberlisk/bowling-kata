@@ -35,5 +35,11 @@ describe Bowling do
 
       expect(bowling.total_score).to eq(24)
     end
+
+    it 'adds 10 and pins knocked down for first roll of second frame to score for previous spare' do
+      bowling = Bowling.new(rolls: '1/ 34')
+
+      expect(bowling.total_score).to eq(20)
+    end
   end
 end
