@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Bowling
   def initialize(rolls = ''); end
 
