@@ -15,5 +15,11 @@ describe Bowling do
 
       expect(bowling.total_score).to eq(9)
     end
+
+    it 'returns 10 for a spare' do
+      bowling = Bowling.new(rolls: '4/')
+
+      expect(bowling.total_score).to eq(10)
+    end
   end
 end

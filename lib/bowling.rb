@@ -8,7 +8,7 @@ class Bowling
   end
 
   def total_score
-    return 10 if @rolls == STRIKE
+    return 10 if @rolls == STRIKE || @rolls.include?('/')
 
     @rolls.to_i.digits.sum
   end
