@@ -22,4 +22,12 @@ describe Bowling do
       expect(bowling.total_score).to eq(10)
     end
   end
+
+  context 'when two frames' do
+    it 'adds all pins knocked down for frames without all pins knocked down' do
+      bowling = Bowling.new(rolls: '81 34')
+
+      expect(bowling.total_score).to eq(16)
+    end
+  end
 end
